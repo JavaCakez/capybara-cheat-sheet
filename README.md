@@ -39,10 +39,10 @@
     page.has_xpath?('//table/tr')
     page.has_css?('table tr.foo')
     page.has_content?('foo')
-    page.should have_xpath('//table/tr')
-    page.should have_css('table tr.foo')
-    page.should have_content('foo')
-    page.should have_no_content('foo')
+    expect(page).to have_xpath('//table/tr')
+    expect(page).to have_css('table tr.foo')
+    expect(page).to have_content('foo')
+    expect(page).to have_no_content('foo')
     find_field('First Name').value
     find_link('Hello').visible?
     find_button('Send').click
@@ -57,9 +57,9 @@
 ## Asynchronous JavaScript
     click_link('foo')
     click_link('bar')
-    page.should have_content('baz')
-    page.should_not have_xpath('//a')
-    page.should have_no_xpath('//a')
+    expect(page).to have_content('baz')
+    expect(page).to_not have_xpath('//a')
+    expect(page).to have_no_xpath('//a')
 
 ## XPath and CSS
     within(:css, 'ul li') { ... }
